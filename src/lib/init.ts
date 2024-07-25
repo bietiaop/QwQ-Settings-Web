@@ -1,4 +1,19 @@
 import type { SettingsKeys } from './qwq';
+import { getUrlParams } from './utils';
+
+// 如果当前页面 URL 参数_wv不是9983，那么就跳转到9983
+const params = getUrlParams();
+if (params.get('_wv') !== '9983') {
+  const url = new URL(window.location.href);
+  // 添加之前的参数
+  for (const [key, value] of params) {
+    url.searchParams.set(key, value);
+  }
+  url.searchParams.set('_wv', '9983');
+
+  // 重定向
+  window.location.href = url.toString();
+}
 
 if (process.env.NODE_ENV === 'development') {
   window.qwq = {
