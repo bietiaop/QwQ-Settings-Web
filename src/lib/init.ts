@@ -1,8 +1,15 @@
 import type { SettingsKeys } from './qwq';
 import { getUrlParams } from './utils';
+import VConsole from 'vconsole';
 
+new VConsole();
 // 如果当前页面 URL 参数_wv不是9983，那么就跳转到9983
 const params = getUrlParams();
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//// @ts-expect-error
+// console.log(window.mqq.ui.openUrl.toString());
+
 if (params.get('_wwv') !== '9983') {
   const url = new URL(window.location.href);
   // 添加之前的参数
@@ -10,11 +17,21 @@ if (params.get('_wwv') !== '9983') {
     url.searchParams.set(key, value);
   }
   url.searchParams.set('_wwv', '9983');
+  url.searchParams.set('_wv', '536870913');
+  url.searchParams.set('_bid', '2450');
+  url.searchParams.set('_nav_alpha', '0');
+  url.searchParams.set('_nav_txtclr', 'ffffff');
+  url.searchParams.set('_nav_titleclr', 'ffffff');
+  url.searchParams.set('_nav_anim', 'true');
+  url.searchParams.set('from_web', '3');
 
-  // 重定向
-  window.location.href = url.toString();
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  window?.mqq?.ui?.openUrl({
+    url: url.toString(),
+    target: 1,
+  });
 }
-
 if (process.env.NODE_ENV === 'development') {
   window.qwq = {
     getQQVersion: () => '11.0.0',
