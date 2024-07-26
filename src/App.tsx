@@ -37,7 +37,7 @@ const App = memo(() => {
   return (
     <Tabs
       defaultValue="status"
-      className="w-full flex flex-col h-screen overflow-hidden bg-secondary"
+      className="w-full flex flex-col h-screen overflow-hidden bg-secondary pt-6"
     >
       <TabsList className="w-full overflow-x-auto justify-start hide-scrollbar p-2 h-auto rounded-none ">
         {Object.entries(pages).map(([key, { title }]) => (
