@@ -29,7 +29,7 @@ if (params.get('_wwv') !== '9983') {
   // @ts-expect-error
   window?.mqq?.ui?.openUrl({
     url: url.toString(),
-    target: 0,
+    target: 2,
   });
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //// @ts-expect-error
