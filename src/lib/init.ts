@@ -26,15 +26,26 @@ if (params.get('_wwv') !== '9983') {
   url.searchParams.set('from_web', '3');
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  window?.mqq?.ui?.openUrl({
-    url: url.toString(),
-    target: 2,
-  });
+  //// @ts-expect-error
+  // window?.mqq?.ui?.openUrl({
+  //   url: url.toString(),
+  //   target: 2,
+  // });
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //// @ts-expect-error
   // window?.mqq?.ui?.invokeURL(window.location.href);
 }
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+window?.mqq?.ui?.setWebViewBehavior({
+  actionButton: 0,
+  statusBarColor: 16777215,
+  navTextColor: 0,
+  navBottomLine: 0,
+  titleBarHide: true,
+  titleBarHideDuration: 0,
+  titleText: '',
+});
 if (process.env.NODE_ENV === 'development') {
   window.qwq = {
     getQQVersion: () => '11.0.0',
