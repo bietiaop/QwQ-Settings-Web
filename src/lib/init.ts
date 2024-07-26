@@ -29,11 +29,11 @@ if (params.get('_wwv') !== '9983') {
   // @ts-expect-error
   window?.mqq?.ui?.openUrl({
     url: url.toString(),
-    target: 1,
+    target: 0,
   });
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  window?.mqq?.ui?.invokeURL(window.location.href);
+  //// @ts-expect-error
+  // window?.mqq?.ui?.invokeURL(window.location.href);
 }
 if (process.env.NODE_ENV === 'development') {
   window.qwq = {
