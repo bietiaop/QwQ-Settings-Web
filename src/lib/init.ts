@@ -31,6 +31,9 @@ if (params.get('_wwv') !== '9983') {
     url: url.toString(),
     target: 1,
   });
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  window?.mqq?.ui?.invokeURL(window.location.href);
 }
 if (process.env.NODE_ENV === 'development') {
   window.qwq = {
