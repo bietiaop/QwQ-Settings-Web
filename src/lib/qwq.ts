@@ -31,6 +31,7 @@ export const allQwQSettings = [
   'disable_hot_update_so_by_traffic',
   'disable_qq_crash_report',
   'disable_useless_packet',
+  'disable_qrlogin_check',
 ] as const;
 
 export type SettingsKeys = (typeof allQwQSettings)[number];
@@ -209,6 +210,12 @@ export const settings: PagesSettings = {
       name: 'disable_qq_crash_report',
       label: '禁用QQ崩溃上报',
       description: '禁止QQ崩溃上报日志以及禁用崩溃后自杀（阻止闪退？）。',
+      type: 'switch',
+    },
+    {
+      name: 'disable_qrlogin_check',
+      label: '禁用扫码授权检查',
+      description: '禁用后，使用相册或长按识别二维码时不再阻止扫码授权登录。',
       type: 'switch',
     },
   ],
